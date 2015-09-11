@@ -1,0 +1,87 @@
+### Components ###
+node_modules
+app/components
+npm-debug.log
+
+### Release process ###
+dist
+temp-dist
+
+### Generated files ###
+app/styles/*.css
+app/styles/*.css.map
+app/styles/scss/config/_sprites.scss
+
+app/scripts/generated
+app/images/generated
+
+### Styleguide ###
+app/styleguide
+
+### Tests ###
+
+*test-*.xml
+test/e2e/backoffice/screenshots/*
+test/e2e/catalog/screenshots/*
+libpeerconnection.log
+
+### Temporary files ###
+.tmp
+.orig
+
+### SublimeText ###
+# workspace files are user-specific
+*.sublime-workspace
+*.sublime-project
+
+# project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using SublimeText
+# *.sublime-project
+
+#sftp configuration file
+sftp-config.json
+
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+### Sass ###
+.sass-cache
+
+.envrc
+brew_packages
+
+# Firefox preferences
+test/e2e/support/firefox/prefs.js
+
+# Certificates and keys
+server.key
+server.crt
+ca.crt
+ca.csr
+ca.key
+server.csr
+server.key.org
+
+# Bundler
+.bundle
