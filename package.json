@@ -1,0 +1,11 @@
+{
+  "name": "spaceWebGame",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "mysql": "2.9.0"
+  },
+  "engines": {
+    "node": ">=0.10.36"
+  }
+}
