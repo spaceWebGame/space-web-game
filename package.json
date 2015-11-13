@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
-    "mysql": "2.9.0"
+    "mysql": "2.9.0",
+    "lodash": "~3.10.1"
   },
   "engines": {
     "node": ">=0.10.36"
