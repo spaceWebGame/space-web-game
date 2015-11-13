@@ -1,34 +1,120 @@
-{
-  "name": "Yellow Dwarf",
-  "spectral_type": "G",
-  "luminosity_class": "5",
-  "temperature": {
-    "min": 5200,
-    "max": 6000
+[
+  {
+    "spectral_type": "O",
+    "spawn_rate": 0.77,
+    "temperature": {
+      "min": 30000,
+      "max": "Infinity"
+    },
+    "mass": {
+      "min": 16,
+      "max": "Infinity"
+    },
+    "radius": {
+      "min": 6.6,
+      "max": "Infinity"
+    }
   },
-  "mass": {
-    "min": 0.8,
-    "max": 1.04
+
+  {
+    "spectral_type": "B",
+    "spawn_rate": 0.45,
+    "temperature": {
+      "min": 10000,
+      "max": 30000
+    },
+    "mass": {
+      "min": 2.1,
+      "max": 16
+    },
+    "radius": {
+      "min": 1.8,
+      "max": 6.6
+    }
   },
-  "radius": {
-    "min": 0.7,
-    "max": 0.96
+
+  {
+    "spectral_type": "A",
+    "spawn_rate": 0.15,
+    "temperature": {
+      "min": 7500,
+      "max": 10000
+    },
+    "mass": {
+      "min": 1.4,
+      "max": 2.1
+    },
+    "radius": {
+      "min": 1.4,
+      "max": 1.8
+    }
+  },
+
+  {
+    "spectral_type": "F",
+    "spawn_rate": 0.33,
+    "temperature": {
+      "min": 6000,
+      "max": 7500
+    },
+    "mass": {
+      "min": 1.04,
+      "max": 1.4
+    },
+    "radius": {
+      "min": 1.15,
+      "max": 1.4
+    }
+  },
+
+  {
+    "spectral_type": "G",
+    "spawn_rate": 0.67,
+    "temperature": {
+      "min": 5200,
+      "max": 6000
+    },
+    "mass": {
+      "min": 0.8,
+      "max": 1.04
+    },
+    "radius": {
+      "min": 0.96,
+      "max": 1.15
+    }
+  },
+
+  {
+    "spectral_type": "K",
+    "spawn_rate": 0.04,
+    "temperature": {
+      "min": 3700,
+      "max": 5200
+    },
+    "mass": {
+      "min": 0.45,
+      "max": 0.8
+    },
+    "radius": {
+      "min": 0.7,
+      "max": 0.96
+    }
+  },
+
+  {
+    "spectral_type": "M",
+    "spawn_rate": 0.90,
+    "temperature": {
+      "min": 2400,
+      "max": 3700
+    },
+    "mass": {
+      "min": 0.08,
+      "max": 0.45
+    },
+    "radius": {
+      "min": 0,
+      "max": 0.7
+    }
   }
-},
-{
-  "name": "Yellow Dwarf",
-  "spectral_type": "G",
-  "luminosity_class": "5",
-  "temperature": {
-    "min": 5200,
-    "max": 6000
-  },
-  "mass": {
-    "min": 0.8,
-    "max": 1.04
-  },
-  "radius": {
-    "min": 0.7,
-    "max": 0.96
-  }
-},
+]
