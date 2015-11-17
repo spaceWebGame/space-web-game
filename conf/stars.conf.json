@@ -4,15 +4,15 @@
     "spawn_rate": 0.77,
     "temperature": {
       "min": 30000,
-      "max": "Infinity"
+      "max": 300000
     },
     "mass": {
       "min": 16,
-      "max": "Infinity"
+      "max": 160
     },
     "radius": {
       "min": 6.6,
-      "max": "Infinity"
+      "max": 66
     }
   },
 
@@ -113,7 +113,7 @@
       "max": 0.45
     },
     "radius": {
-      "min": 0,
+      "min": 0.01,
       "max": 0.7
     }
   }
