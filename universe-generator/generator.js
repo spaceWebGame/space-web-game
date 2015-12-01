@@ -1,31 +1,53 @@
 var fs = require('fs');
 var _ = require('lodash');
 
-var generateSolarSystem = function(size) {
-  var grid = 100;
-  var celestialsPlanets = 10;
-  var sunCelestialSize = 3;
-  var celestialsPlanetsSizeMax = 0.10 * sunCelestialSize;
-  var celestialsPlanetsSizeMin = 0.02 * sunCelestialSize;
-  var planetSpacingMin = 8;
-};
-
-var generateStar = function(file) {
-  var file = JSON.parse(fs.readFileSync(file, 'utf8'));
-  var starTemplate = lottery(file);
-  _.forIn(starTemplate, function(value, key) {
-    if (!starTemplate[key].hasOwnProperty('min')) {
+var generateProperties = function(template) {
+  _.forIn(template, function(value, key) {
+    if (!template[key].hasOwnProperty('min')) {
       return;
     }
-    starTemplate[key].value = getRandomIntInclusive(starTemplate[key].min, starTemplate[key].max);
+    template[key].value = getRandomIntInclusive(template[key].min, template[key].max);
   });
 
-  return starTemplate;
+  return template;
 };
+
+var generateStar = function() {
+  var file = JSON.parse(fs.readFileSync('conf/stars.conf.json', 'utf8'));
+  var template = lottery(file);
+  return generateProperties(template);
+}
+
+
+var generateSolarSystem = function(nbrPlanets) {
+  var star = generateStar();
+  var planet = generatePlanet(star);
+};
+
+var generatePlanet = function(star) {
+  var planet = JSON.parse(fs.readFileSync('conf/planets.conf.json', 'utf8'));
+  var starMass = star.mass.value;
+
+  // Planet mass (ratio)
+  planet.mass = getRandomIntInclusive(0.0000000001, 0.05) * starMass;
+  planet.structure.radius.value = getRandomIntInclusive(planet.structure.radius.min, planet.structure.radius.max);
+  var layersAfterLottery = [];
+  _.forEach(planet.layers, function(layer) {
+    var result = lottery([layer]);
+    if (result) {
+      layersAfterLottery.push(result);
+    }
+  })
+  layersAfterLottery = generateProperties(layersAfterLottery);
+  planet.layers = layersAfterLottery;
+
+  return planet;
+}
 
 var getRandomIntInclusive = function(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
+
 
 var lottery = function(list) {
   var totalRates, choices, randomRate, result;
@@ -36,7 +58,14 @@ var lottery = function(list) {
   totalRates = _.sum(list, function(item) {
     return item.spawn_rate;
   });
-  totalRates = totalRates;
+
+  if (totalRates < 1) {
+    var emptyElement = {
+      type: null,
+      spawn_rate: 1 - totalRates
+    };
+    list.push(emptyElement);
+  }
 
   /**
    * We defined the generale percentage of chance for each
@@ -66,9 +95,9 @@ var lottery = function(list) {
       return false;
     }
   });
-  return result;
+  return (result.type === null) ? null : result;
 
 };
 
-var newStar = generateStar('conf/stars.conf.json');
+var newStar = generateStar();
 console.log(newStar);
