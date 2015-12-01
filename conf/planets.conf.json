@@ -1,0 +1,43 @@
+{
+  "structure": {
+    "radius": {
+      "min": 1,
+      "max": 100
+    },
+    "layers": [
+      {
+        "name": "core",
+        "spawn_rate": 0.5,
+        "radius_ratio": {
+          "min": 0.1,
+          "max": 0.8
+        }
+      },
+      {
+        "name": "mantle",
+        "spawn_rate": 1,
+        "radius_ratio": {
+          "min": 0.3,
+          "max": 1
+        }
+      },
+      {
+        "name": "water",
+        "spawn_rate": 0.1,
+        "radius_ratio": {
+          "min": 0.1,
+          "max": 0.2
+        }
+      },
+      {
+        "name": "atmosphere",
+        "spawn_rate": 0.2,
+        "radius_ratio": {
+          "min": 0.1,
+          "max": 0.2
+        }
+      }
+    ]
+  },
+  "composition": {}
+}
