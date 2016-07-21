@@ -9,6 +9,7 @@ class Celestial {
     this.type = null;
     this.description = null;
     this.radius = null;
+    this.volume = null;
     this.slots = [];
     this.position = {};
     this.velocity = null;
